@@ -1,0 +1,35 @@
+
+train:
+  batch_size: 64
+
+test:
+  batch_size: 64
+
+apex: False
+debug: False
+print_freq: 100
+num_workers: 8
+arch: 'nfnet_l0'
+size: 224
+scheduler: 'CosineAnnealingLR'  # ['ReduceLROnPlateau', 'CosineAnnealingLR', 'CosineAnnealingWarmRestarts']
+num_epochs: 25
+# factor=0.2 # ReduceLROnPlateau
+# patience=4 # ReduceLROnPlateau
+# eps=1e-6 # ReduceLROnPlateau
+T_max: 6  # CosineAnnealingLR
+# T_0=6 # CosineAnnealingWarmRestarts
+lr: 0.0001
+min_lr: 0.000001
+batch_size: 64 # 64
+weight_decay: 0.000001
+gradient_accumulation_steps: 1
+max_grad_norm: 1000
+seed: 42
+target_size: 1
+target_col: 'target'
+n_fold: 1
+trn_fold: [0]
+state: 'train'
+print_iter: -1
+use_mixup: False
+mixup_alpha: 0.5
